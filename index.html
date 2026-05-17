@@ -1,0 +1,1774 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مذاكرة الفاينل - Nutrition & Biochemistry</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;700;800&display=swap');
+
+  :root {
+    --primary: #1a3a5c;
+    --accent: #e63946;
+    --green: #2d6a4f;
+    --orange: #f4a261;
+    --light: #f0f4f8;
+    --yellow: #ffd166;
+    --purple: #6b2d8b;
+    --teal: #0077b6;
+    --border: #cbd5e0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Cairo', sans-serif;
+    background: white;
+    color: #1a1a2e;
+    font-size: 11px;
+    line-height: 1.6;
+    direction: rtl;
+  }
+
+  /* ====== PAGE SETUP ====== */
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    padding: 12mm 14mm;
+    background: white;
+    page-break-after: always;
+    position: relative;
+  }
+
+  .page:last-child { page-break-after: avoid; }
+
+  /* ====== COVER PAGE ====== */
+  .cover {
+    background: linear-gradient(135deg, #1a3a5c 0%, #0077b6 50%, #023e8a 100%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 297mm;
+  }
+
+  .cover h1 {
+    font-size: 36px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+  }
+
+  .cover h2 { font-size: 20px; font-weight: 600; opacity: 0.9; margin-bottom: 8px; }
+  .cover .sub { font-size: 14px; opacity: 0.75; margin-bottom: 30px; }
+
+  .cover-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+    width: 100%;
+  }
+
+  .cover-card {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+  }
+
+  .cover-card .icon { font-size: 28px; margin-bottom: 6px; }
+  .cover-card p { font-size: 11px; font-weight: 600; }
+
+  .cover-footer {
+    margin-top: 30px;
+    padding: 15px 30px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50px;
+    font-size: 12px;
+  }
+
+  /* ====== SECTION HEADER ====== */
+  .page-header {
+    background: var(--primary);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .page-header .icon { font-size: 18px; }
+  .page-header h2 { font-size: 15px; font-weight: 700; }
+  .page-header .en { font-size: 11px; opacity: 0.8; margin-right: auto; direction: ltr; }
+
+  /* ====== SECTION TITLE ====== */
+  .sec-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary);
+    border-right: 4px solid var(--accent);
+    padding-right: 8px;
+    margin: 10px 0 6px;
+  }
+
+  /* ====== CARDS & BOXES ====== */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 10px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; margin-bottom: 10px; }
+
+  .card {
+    background: var(--light);
+    border-radius: 8px;
+    padding: 10px;
+    border-right: 3px solid var(--primary);
+  }
+
+  .card.green { border-right-color: var(--green); }
+  .card.red { border-right-color: var(--accent); }
+  .card.orange { border-right-color: var(--orange); }
+  .card.purple { border-right-color: var(--purple); }
+  .card.teal { border-right-color: var(--teal); }
+  .card.yellow { border-right-color: #e9c46a; background: #fffbec; }
+
+  .card h3 {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .card h3 .en-term {
+    font-size: 10px;
+    color: var(--accent);
+    direction: ltr;
+    font-style: italic;
+  }
+
+  .card p, .card li { font-size: 10.5px; line-height: 1.6; color: #333; }
+  .card ul { padding-right: 14px; }
+  .card li { margin-bottom: 2px; }
+
+  /* ====== HIGHLIGHT BOX ====== */
+  .highlight {
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    border-radius: 6px;
+    padding: 8px 10px;
+    margin: 6px 0;
+    font-size: 10.5px;
+  }
+
+  .highlight.red-bg { background: #fde8e8; border-color: #e63946; }
+  .highlight.green-bg { background: #e8f5e9; border-color: #2d6a4f; }
+  .highlight.blue-bg { background: #e3f2fd; border-color: #0077b6; }
+  .highlight.purple-bg { background: #f3e5f5; border-color: #6b2d8b; }
+
+  .highlight strong { color: var(--accent); }
+  .highlight.green-bg strong { color: var(--green); }
+  .highlight.blue-bg strong { color: var(--teal); }
+
+  /* ====== TABLE ====== */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10px;
+    margin: 6px 0;
+  }
+
+  th {
+    background: var(--primary);
+    color: white;
+    padding: 6px 8px;
+    text-align: right;
+    font-weight: 600;
+  }
+
+  td {
+    padding: 5px 8px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  tr:nth-child(even) { background: var(--light); }
+  tr:hover { background: #e8f0fe; }
+
+  /* ====== BADGE ====== */
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 9.5px;
+    font-weight: 700;
+    color: white;
+    direction: ltr;
+  }
+
+  .badge.green { background: var(--green); }
+  .badge.red { background: var(--accent); }
+  .badge.orange { background: var(--orange); color: #333; }
+  .badge.blue { background: var(--teal); }
+  .badge.purple { background: var(--purple); }
+
+  /* ====== FORMULA BOX ====== */
+  .formula {
+    background: #1a3a5c;
+    color: white;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-family: monospace;
+    font-size: 11px;
+    text-align: center;
+    margin: 6px 0;
+    direction: ltr;
+    letter-spacing: 0.5px;
+  }
+
+  /* ====== COMPARISON ====== */
+  .compare {
+    display: flex;
+    gap: 8px;
+    margin: 6px 0;
+  }
+
+  .compare-col {
+    flex: 1;
+    border-radius: 8px;
+    padding: 8px;
+    font-size: 10.5px;
+  }
+
+  .compare-col h4 {
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+  }
+
+  .compare-col.left { background: #e8f5e9; color: #1b5e20; }
+  .compare-col.right { background: #fde8e8; color: #b71c1c; }
+  .compare-col.mid { background: #e3f2fd; color: #0d47a1; }
+  .compare-col li { margin-bottom: 3px; }
+  .compare-col ul { padding-right: 12px; }
+
+  /* ====== STEP BOXES ====== */
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 6px 0;
+  }
+
+  .step {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    background: var(--light);
+    border-radius: 6px;
+    padding: 7px 10px;
+  }
+
+  .step-num {
+    background: var(--primary);
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .step-content { font-size: 10.5px; }
+  .step-content strong { color: var(--primary); }
+
+  /* ====== TRAFFIC LIGHT ====== */
+  .traffic {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin: 8px 0;
+  }
+
+  .traffic-item {
+    text-align: center;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 10px;
+    font-weight: 700;
+    color: white;
+  }
+
+  .traffic-item.green { background: #27ae60; }
+  .traffic-item.amber { background: #f39c12; }
+  .traffic-item.red { background: #e63946; }
+
+  /* ====== DIVIDER ====== */
+  .divider {
+    height: 2px;
+    background: linear-gradient(to left, transparent, var(--primary), transparent);
+    margin: 8px 0;
+  }
+
+  /* ====== MINI CHART ====== */
+  .pie-chart {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin: 6px 0;
+  }
+
+  .pie-visual {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: conic-gradient(#1a3a5c 0deg 198deg, #e63946 198deg 261deg, #2d6a4f 261deg 360deg);
+    flex-shrink: 0;
+  }
+
+  .pie-legend { font-size: 10px; }
+  .pie-legend div { display: flex; align-items: center; gap: 5px; margin-bottom: 3px; }
+  .pie-legend .dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+  /* ====== PAGE NUMBER ====== */
+  .page-num {
+    position: absolute;
+    bottom: 8mm;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 9px;
+    color: #999;
+  }
+
+  /* ====== SUMMARY PAGE ====== */
+  .summary-header {
+    background: linear-gradient(135deg, #e63946, #c1121f);
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  .summary-header h2 { font-size: 18px; font-weight: 900; }
+  .summary-header p { font-size: 11px; opacity: 0.85; }
+
+  .key-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    margin-bottom: 5px;
+    font-size: 10.5px;
+  }
+
+  .key-point::before {
+    content: "★";
+    color: var(--yellow);
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  /* ====== PRINT MEDIA ====== */
+  @media print {
+    body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    .page { margin: 0; padding: 10mm 12mm; min-height: auto; page-break-after: always; }
+    .page:last-child { page-break-after: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ========================= COVER ========================= -->
+<div class="page cover">
+  <div style="font-size:60px; margin-bottom:10px;">🎓</div>
+  <h1>مذاكرة الـ Final</h1>
+  <h2>Nutrition, Weight Management & Clinical Dietetics</h2>
+  <p class="sub">Dr. Marwa Ibrahim Khedr — Alexandria Faculty of Medicine</p>
+  
+  <div class="cover-grid">
+    <div class="cover-card"><div class="icon">🍎</div><p>Nutrients & Classes</p></div>
+    <div class="cover-card"><div class="icon">⚖️</div><p>Weight Management & BMR</p></div>
+    <div class="cover-card"><div class="icon">🏋️</div><p>Body Composition</p></div>
+    <div class="cover-card"><div class="icon">🥗</div><p>Types of Diets</p></div>
+    <div class="cover-card"><div class="icon">📊</div><p>Glycemic Index</p></div>
+    <div class="cover-card"><div class="icon">🏃</div><p>Sports Nutrition</p></div>
+  </div>
+
+  <div class="cover-footer">
+    ✨ شرح بسيط عامية مصرية + English Terms — جاهز للطباعة ✨
+  </div>
+</div>
+
+<!-- ========================= PAGE 2: NUTRIENTS INTRO ========================= -->
+<div class="page">
+  <div class="page-header">
+    <span class="icon">🍽️</span>
+    <h2>الـ Nutrients — إيه دي؟</h2>
+    <span class="en">Classes of Nutrients</span>
+  </div>
+
+  <p style="font-size:11px; margin-bottom:8px;">الـ <strong>Nutrients</strong> هي المواد اللي جسمك محتاجها علشان: ينظم وظايفه، يصلح نفسه، يكبر، ويطلع طاقة.</p>
+
+  <div class="sec-title">التقسيم الكبير</div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>🔋 Macronutrients <span class="en-term">(بيدوا طاقة)</span></h3>
+      <ul>
+        <li><strong>Carbohydrates</strong> — الكارب</li>
+        <li><strong>Proteins</strong> — البروتين</li>
+        <li><strong>Fats</strong> — الدهون</li>
+      </ul>
+    </div>
+    <div class="card green">
+      <h3>🚫 Micronutrients <span class="en-term">(مش بيدوا طاقة)</span></h3>
+      <ul>
+        <li><strong>Vitamins</strong> — الفيتامينات</li>
+        <li><strong>Minerals</strong> — المعادن</li>
+        <li><strong>Water</strong> — الميه (مش بتدي طاقة خالص)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="highlight red-bg">
+    <strong>⚡ Trick Question:</strong> الميه + الفيتامينات + المعادن — كلها <strong>ZERO calories per gram!</strong>
+  </div>
+
+  <div class="sec-title">الـ Energy Content لكل جرام</div>
+  <div class="grid-3">
+    <div class="card teal" style="text-align:center;">
+      <h3 style="justify-content:center;">🍞 Carbs</h3>
+      <p style="font-size:20px; font-weight:900; color:var(--teal);">4 kcal/g</p>
+    </div>
+    <div class="card purple" style="text-align:center;">
+      <h3 style="justify-content:center;">🥩 Protein</h3>
+      <p style="font-size:20px; font-weight:900; color:var(--purple);">4 kcal/g</p>
+    </div>
+    <div class="card red" style="text-align:center;">
+      <h3 style="justify-content:center;">🧈 Fat</h3>
+      <p style="font-size:20px; font-weight:900; color:var(--accent);">9 kcal/g</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <div class="sec-title">🍞 Carbohydrates — الكارب</div>
+  
+  <div class="compare">
+    <div class="compare-col left">
+      <h4>Simple Carbohydrates 🍬</h4>
+      <ul>
+        <li>Monosaccharides: Glucose, Fructose, Galactose</li>
+        <li>Disaccharides: Sucrose (Glucose+Fructose), Lactose (Glucose+Galactose), Maltose</li>
+        <li>بتتهضم بسرعة — GI عالي</li>
+      </ul>
+    </div>
+    <div class="compare-col right">
+      <h4>Complex Carbohydrates 🌾</h4>
+      <ul>
+        <li>Polysaccharides: Starch, Cellulose (Fiber)</li>
+        <li>بتتهضم بطيء — GI أقل</li>
+        <li><strong>Fiber:</strong> Complex carb from plants, مش بيتهضم، بيساعد في الهضم</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="highlight green-bg">
+    <strong>📌 Daily Recommended:</strong> 45–65% من السعرات من الكارب | Fiber مهم جداً
+  </div>
+
+  <div class="sec-title">🧈 Fats — الدهون</div>
+  <div class="grid-3">
+    <div class="card green">
+      <h3>✅ Unsaturated Fats</h3>
+      <p>"الدهون الكويسة" — موجودة في الأفوكادو، الجوز، زيت الزيتون، السمك. بتقلل الـ LDL.</p>
+    </div>
+    <div class="card orange">
+      <h3>⚠️ Saturated Fats</h3>
+      <p>في المنتجات الحيوانية. بتزود الـ cholesterol. قلل استهلاكها.</p>
+    </div>
+    <div class="card red">
+      <h3>❌ Trans Fats</h3>
+      <p>أسوأ نوع! بيرفع الـ LDL ويخفض الـ HDL. اتجنبها خالص.</p>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <strong>Cholesterol:</strong> موجود بس في المنتجات الحيوانية | جسمك بيعمله لوحده | الإفراط منه risk factor لأمراض القلب<br>
+    <strong>Daily Fat:</strong> 20–35% من السعرات
+  </div>
+
+  <div class="sec-title">🥩 Protein — البروتين</div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>الأحماض الأمينية — Amino Acids</h3>
+      <ul>
+        <li>إجمالي: <strong>20 amino acid</strong></li>
+        <li>جسمك بيعمل: <strong>11</strong> (non-essential)</li>
+        <li>لازم تاكلهم: <strong>9</strong> (essential amino acids)</li>
+      </ul>
+    </div>
+    <div class="card green">
+      <h3>Complete vs Incomplete Protein</h3>
+      <ul>
+        <li><strong>Complete:</strong> من الحيوانات (فيهم الـ 9 essential)</li>
+        <li><strong>Incomplete:</strong> من النباتات (لازم تكمّل بمصادر تانية)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="highlight blue-bg"><strong>Daily Protein:</strong> 10–35% من السعرات | Athletes: 1.2–2.0 g/kg body weight</div>
+
+  <div class="page-num">الصفحة 2</div>
+</div>
+
+<!-- ========================= PAGE 3: VITAMINS & MINERALS & WATER ========================= -->
+<div class="page">
+  <div class="page-header">
+    <span class="icon">💊</span>
+    <h2>Vitamins & Minerals & Water</h2>
+    <span class="en">Micronutrients</span>
+  </div>
+
+  <div class="sec-title">💊 Vitamins — الفيتامينات</div>
+  <div class="highlight red-bg"><strong>⚠️ مهم:</strong> الفيتامينات <strong>مش بتدي طاقة</strong> — بتساعد في الـ chemical reactions بس</div>
+
+  <div class="compare">
+    <div class="compare-col left">
+      <h4>Fat Soluble 🧈 (بتتخزن في الجسم)</h4>
+      <p style="margin-bottom:4px; font-size:14px; font-weight:900;">A D E K</p>
+      <ul>
+        <li><strong>A:</strong> رؤية + مناعة</li>
+        <li><strong>D:</strong> الكالسيوم والعظام</li>
+        <li><strong>E:</strong> Antioxidant</li>
+        <li><strong>K:</strong> تجلط الدم</li>
+      </ul>
+    </div>
+    <div class="compare-col right">
+      <h4>Water Soluble 💧 (مش بتتخزن — اطرحها يومياً)</h4>
+      <p style="margin-bottom:4px; font-size:12px; font-weight:700;">Vitamin C + B complex</p>
+      <ul>
+        <li><strong>B1</strong> Thiamin | <strong>B2</strong> Riboflavin | <strong>B3</strong> Niacin</li>
+        <li><strong>B5</strong> Pantothenic Acid | <strong>B6</strong> Pyridoxine</li>
+        <li><strong>B7</strong> Biotin | <strong>B9</strong> Folic Acid | <strong>B12</strong> Cobalamin</li>
+        <li><strong>C:</strong> Antioxidant، مناعة، كولاجين</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="highlight green-bg">
+    <strong>🛡️ Antioxidants:</strong> فيتامينات بتحمي الخلايا من الـ aging والـ cancer — خصوصاً B7، E، C
+  </div>
+
+  <div class="sec-title">⛏️ Minerals — المعادن</div>
+  <p style="font-size:10.5px; margin-bottom:8px;">المعادن <strong>مش بتدي طاقة</strong>، بتعمل وظايف كتير في الجسم. أصلها من الصخور والتربة (inorganic).</p>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>📦 Needed in Large Quantities</h3>
+      <ul>
+        <li><strong>Calcium (Ca)</strong> — عظام وأسنان</li>
+        <li><strong>Sodium (Na)</strong> — ناس كتير بتاكل أكتر من اللازم ⚠️</li>
+        <li><strong>Potassium (K)</strong> — قلب وعضلات</li>
+        <li><strong>Magnesium (Mg)</strong> — عضلات وأعصاب</li>
+        <li><strong>Phosphorus, Chlorine, Sulfur</strong></li>
+      </ul>
+    </div>
+    <div class="card green">
+      <h3>🔬 Trace Amounts (كميات صغيرة)</h3>
+      <ul>
+        <li><strong>Iron (Fe)</strong> — نقل الأكسجين في الدم</li>
+        <li><strong>Iodine</strong> — الغدة الدرقية</li>
+        <li><strong>Zinc</strong> — مناعة وتئام الجروح</li>
+        <li><strong>Copper, Fluorine</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <div class="sec-title">💧 Water — الميه</div>
+
+  <div class="grid-2">
+    <div class="card teal">
+      <h3>ليه الميه مهمة؟</h3>
+      <ul>
+        <li>65% من جسمك ميه!</li>
+        <li>أساسية لكل العمليات الحيوية</li>
+        <li>المكون الأساسي للدم والأنسجة</li>
+        <li>بتطرح الفضلات وبتساعد في الهضم</li>
+        <li><strong>مش بتدي طاقة</strong></li>
+      </ul>
+    </div>
+    <div class="card orange">
+      <h3>نصايح الميه 💡</h3>
+      <ul>
+        <li>معظم الناس بتشرب أقل من المطلوب</li>
+        <li>احصل على الميه من: ميه سادة، فواكه، خضروات</li>
+        <li>ابعد عن: العصائر، السودا، المشروبات المحلّاة</li>
+        <li>Sports drinks: بس لو اتمرنت +5 ساعات</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <div class="sec-title">📊 Dietary Guidelines & Food Groups</div>
+
+  <div class="highlight blue-bg">
+    <strong>5 Food Groups:</strong> 1️⃣ Vegetables & Legumes | 2️⃣ Fruits | 3️⃣ Grains (mostly whole grain) | 4️⃣ Lean meats, fish, eggs, nuts | 5️⃣ Milk, yogurt, cheese (reduced fat)
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>MyPlate 2011 🍽️</h3>
+      <ul>
+        <li>نص الطبق: Fruits & Vegetables</li>
+        <li>ربع الطبق: Grains (نص منهم whole grains)</li>
+        <li>ربع الطبق: Protein</li>
+        <li>جنب: Dairy</li>
+        <li>قلل: added sugars, saturated fat, sodium</li>
+      </ul>
+    </div>
+    <div class="card purple">
+      <h3>Flipped Food Pyramid 2026 🔺</h3>
+      <ul>
+        <li>الأولوية لـ: Protein, Dairy, Healthy Fats (فوق)</li>
+        <li>Vegetables & Fruits (تاني)</li>
+        <li>Whole Grains (قليل)</li>
+        <li>قلل: Ultra-processed foods, added sugars</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sec-title">🏷️ Food Labelling</div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>إيه اللي لازم يكون على العلبة؟</h3>
+      <ul>
+        <li>اسم المنتج + الوزن</li>
+        <li>Use by / Best before dates</li>
+        <li>طريقة التخزين والتحضير</li>
+        <li>المكونات + الـ 14 allergens بالبولد</li>
+        <li>Nutritional information</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>🚦 Traffic Light System</h3>
+      <div class="traffic">
+        <div class="traffic-item green">🟢 Green<br>اكل عادي</div>
+        <div class="traffic-item amber">🟡 Amber<br>معقولة</div>
+        <div class="traffic-item red">🔴 Red<br>بالقليل</div>
+      </div>
+      <p style="font-size:10px; margin-top:4px;">بيبين: Fat, Saturated Fat, Sugars, Salt<br>
+      High sugar = أكتر من 22.5g/100g | Low = أقل من 5g/100g</p>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <strong>14 Most Common Allergens:</strong> Cereals (wheat), Crustaceans, Fish, Peanuts, Eggs, Nuts, Mustard, Milk, Celery, Soya, Sesame, Sulphites, Lupin, Molluscs
+  </div>
+
+  <div class="page-num">الصفحة 3</div>
+</div>
+
+<!-- ========================= PAGE 4: WEIGHT MANAGEMENT & ENERGY BALANCE ========================= -->
+<div class="page">
+  <div class="page-header">
+    <span class="icon">⚖️</span>
+    <h2>Weight Management & Energy Balance</h2>
+    <span class="en">إدارة الوزن</span>
+  </div>
+
+  <div class="sec-title">إيه هو الـ Weight Management؟</div>
+  <p style="font-size:10.5px; margin-bottom:8px;">مش بس تخس — ده نهج شامل علشان تحافظ على وزن صحي مدى الحياة. الهدف: صحة كاملة، مش بس أرقام على الميزان.</p>
+
+  <div class="grid-3">
+    <div class="card">
+      <h3>📉 Weight Loss</h3>
+      <p>استراتيجيات تقليل الوزن مع الحفاظ على الـ lean mass</p>
+    </div>
+    <div class="card orange">
+      <h3>📈 Weight Gain</h3>
+      <p>لناس الـ underweight — زيادة طاقة مع تعديلات غذائية</p>
+    </div>
+    <div class="card green">
+      <h3>⚖️ Weight Maintenance</h3>
+      <p>عادات تمنع رجوع الوزن وتدعم الصحة الأيضية</p>
+    </div>
+  </div>
+
+  <div class="sec-title">🔋 Energy Balance — المعادلة الأساسية</div>
+  <div class="formula">
+    Energy In (Calories from food) = Energy Out (Metabolism + Activity + Digestion)
+  </div>
+
+  <div class="grid-3">
+    <div class="card red">
+      <h3>Calories In > Out</h3>
+      <p>⬆️ Weight Gain — التخزين كـ دهون</p>
+    </div>
+    <div class="card green">
+      <h3>Calories In < Out</h3>
+      <p>⬇️ Weight Loss — حرق الطاقة المخزنة</p>
+    </div>
+    <div class="card teal">
+      <h3>Calories In = Out</h3>
+      <p>⚖️ Weight Maintenance</p>
+    </div>
+  </div>
+
+  <div class="sec-title">🔥 مكونات الـ Energy Expenditure</div>
+  <div class="grid-3">
+    <div class="card purple">
+      <h3>BMR (60–70%)</h3>
+      <p><strong>Basal Metabolic Rate</strong><br>الطاقة اللي جسمك بيحرقها وانت قاعد مش عامل حاجة — التنفس، القلب، المخ، إصلاح الخلايا</p>
+    </div>
+    <div class="card orange">
+      <h3>Physical Activity</h3>
+      <p>الطاقة من التمارين والحركة اليومية — أكتر جزء ممكن تتحكم فيه</p>
+    </div>
+    <div class="card">
+      <h3>TEF ~10%</h3>
+      <p><strong>Thermic Effect of Food</strong><br>الطاقة اللي الجسم بيحرقها في عملية الهضم نفسها</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <div class="sec-title">🧮 الـ BMR — Mifflin-St Jeor Equation (الأدق)</div>
+
+  <div class="grid-2">
+    <div class="formula" style="font-size:10px; text-align:right; direction:ltr;">
+      👨 Men: BMR = (10 × kg) + (6.25 × cm) - (5 × age) + 5<br><br>
+      👩 Women: BMR = (10 × kg) + (6.25 × cm) - (5 × age) - 161
+    </div>
+    <div class="card green">
+      <h3>مثال عملي:</h3>
+      <p>راجل 28 سنة، 75 كيلو، 178 سم:</p>
+      <p>BMR = (10×75) + (6.25×178) - (5×28) + 5</p>
+      <p>= 750 + 1112.5 - 140 + 5</p>
+      <p style="font-size:13px; font-weight:900; color:var(--green);">= 1,727 calories/day</p>
+    </div>
+  </div>
+
+  <div class="sec-title">📊 الـ TDEE — Total Daily Energy Expenditure</div>
+  <div class="formula">TDEE = BMR × Activity Multiplier</div>
+
+  <table>
+    <tr>
+      <th>Activity Level</th>
+      <th>وصف</th>
+      <th>Multiplier</th>
+    </tr>
+    <tr><td>Sedentary</td><td>مش بتتمرن خالص</td><td><strong>× 1.2</strong></td></tr>
+    <tr><td>Lightly Active</td><td>تمرين 1–3 أيام/أسبوع</td><td><strong>× 1.375</strong></td></tr>
+    <tr><td>Moderately Active</td><td>تمرين 3–5 أيام/أسبوع</td><td><strong>× 1.55</strong></td></tr>
+    <tr><td>Very Active</td><td>تمرين 6–7 أيام/أسبوع شديد</td><td><strong>× 1.725</strong></td></tr>
+    <tr><td>Extra Active</td><td>تمرين + شغل بدني</td><td><strong>× 1.9</strong></td></tr>
+  </table>
+
+  <div class="highlight blue-bg">
+    <strong>مثال:</strong> نفس الراجل (BMR = 1727) بيتمرن 4 أيام/أسبوع (Moderately Active)<br>
+    TDEE = 1727 × 1.55 = <strong>2,677 calories/day</strong> — ده الـ maintenance level بتاعه
+  </div>
+
+  <div class="sec-title">🎯 تعديل السعرات حسب الهدف</div>
+  <div class="grid-3">
+    <div class="card red">
+      <h3>Fat Loss 📉</h3>
+      <p>TDEE – 300 to 500 kcal<br>Example: 2677 – 400 = <strong>2,277 kcal/day</strong><br>مش تنزل عن 1200 (نساء) / 1500 (رجال)</p>
+    </div>
+    <div class="card teal">
+      <h3>Maintain ⚖️</h3>
+      <p>اكل على الـ TDEE level<br>Example: <strong>2,677 kcal/day</strong></p>
+    </div>
+    <div class="card green">
+      <h3>Muscle Gain 📈</h3>
+      <p>TDEE + 200 to 300 kcal<br>Example: 2677 + 250 = <strong>2,927 kcal/day</strong><br>مع resistance training</p>
+    </div>
+  </div>
+
+  <div class="sec-title">❌ أكبر 3 أخطاء في حساب السعرات</div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content"><strong>Overestimating Activity Level:</strong> متختارش "Very Active" وانت شغلك مكتب وبتتمرن 2-3 أيام. ابدأ بـ multiplier أقل وراجع بعد 3 أسابيع.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content"><strong>Forgetting Hidden Calories:</strong> ملعقة زيت زيتون (120 kcal) + قهوة بكريمة (50) + سناك (150) + شيكولاتة ساخنة (120) = 440 kcal اتنسوا!</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content"><strong>Inconsistent Tracking:</strong> تعد يومين وتسيب 5 — بيخلي البيانات مش صح. اعمل tracking مستمر 3-4 أسابيع كاملة.</div>
+    </div>
+  </div>
+
+  <div class="page-num">الصفحة 4</div>
+</div>
+
+<!-- ========================= PAGE 5: BMI & ASSESSMENT ========================= -->
+<div class="page">
+  <div class="page-header">
+    <span class="icon">📐</span>
+    <h2>BMI & Body Assessment Methods</h2>
+    <span class="en">تقييم الوزن والجسم</span>
+  </div>
+
+  <div class="sec-title">📏 BMI — Body Mass Index</div>
+  <div class="grid-2">
+    <div>
+      <div class="formula" style="font-size:13px;">BMI = Weight (kg) ÷ Height² (m²)</div>
+      <div class="highlight red-bg" style="margin-top:8px;">
+        <strong>⚠️ Clinical Limitation:</strong> الـ BMI مش بيفرق بين الدهون والعضلات. الـ athletes قد يتصنفوا "Overweight" وجسمهم صح!
+      </div>
+    </div>
+    <table>
+      <tr><th>Category</th><th>BMI Range</th></tr>
+      <tr><td>Underweight</td><td style="color:var(--teal); font-weight:700;">&lt; 18.5</td></tr>
+      <tr><td>Normal Weight</td><td style="color:var(--green); font-weight:700;">18.5 – 24.9</td></tr>
+      <tr><td>Overweight</td><td style="color:var(--orange); font-weight:700;">25 – 29.9</td></tr>
+      <tr><td>Obesity</td><td style="color:var(--accent); font-weight:700;">≥ 30</td></tr>
+    </table>
+  </div>
+
+  <div class="sec-title">🔬 Body Composition — تقسيم الجسم</div>
+  <div class="grid-2">
+    <div class="card red">
+      <h3>Fat Mass (FM)</h3>
+      <p>كل الدهون في الجسم — subcutaneous + visceral. ضروري بكميات معينة (هرمونات وطاقة)، لكن الزيادة بتزود خطر الأمراض.</p>
+    </div>
+    <div class="card green">
+      <h3>Fat-Free Mass (FFM)</h3>
+      <p>العضلات + العظام + الأعضاء + الميه. الأنسجة النشطة أيضياً. نقصها = malnutrition أو sarcopenia.</p>
+    </div>
+    <div class="card teal">
+      <h3>Lean Mass</h3>
+      <p>أساساً الـ skeletal muscle. مؤشر للقدرة الوظيفية. نقصه بيتنبأ بمضاعفات عند كبار السن.</p>
+    </div>
+    <div class="card purple">
+      <h3>Body Water</h3>
+      <p>مقسم: Intracellular + Extracellular. التغيرات = hydration status أو edema أو fluid shifts.</p>
+    </div>
+  </div>
+
+  <div class="sec-title">📊 Normal Body Fat % Reference Ranges</div>
+  <table>
+    <tr><th>Category</th><th>Men</th><th>Women</th></tr>
+    <tr><td>Athletes</td><td>6–13%</td><td>14–20%</td></tr>
+    <tr><td>Acceptable / Normal</td><td>14–24%</td><td>21–31%</td></tr>
+    <tr><td>High Risk (Obesity)</td><td>&gt; 25%</td><td>&gt; 32%</td></tr>
+  </table>
+
+  <div class="sec-title">🧪 طرق قياس الـ Body Composition</div>
+  <table>
+    <tr>
+      <th>Method</th>
+      <th>Accuracy</th>
+      <th>Cost</th>
+      <th>Accessibility</th>
+      <th>الاستخدام</th>
+    </tr>
+    <tr><td><strong>BMI</strong></td><td style="color:var(--accent);">Low</td><td>Very Low</td><td>Excellent</td><td>Screening only</td></tr>
+    <tr><td><strong>Skinfold Thickness</strong></td><td style="color:var(--orange);">Moderate</td><td>Low</td><td>Good</td><td>Field studies</td></tr>
+    <tr><td><strong>BIA</strong> (Bioelectrical Impedance)</td><td style="color:var(--teal);">Good</td><td>Moderate</td><td>Excellent</td><td>Routine clinical ⭐</td></tr>
+    <tr><td><strong>DEXA</strong> (Dual-Energy X-ray)</td><td style="color:var(--green);">Excellent</td><td>High</td><td>Moderate</td><td>Reference standard</td></tr>
+    <tr><td><strong>CT / MRI</strong></td><td style="color:var(--green);">Excellent</td><td>Very High</td><td>Limited</td><td>Research only</td></tr>
+  </table>
+
+  <div class="grid-2" style="margin-top:8px;">
+    <div class="card teal">
+      <h3>BIA — كيف بتشتغل؟</h3>
+      <p>بتبعت تيار كهربي خفيف في الجسم. الـ fat mass بيقاوم التيار، الـ fat-free mass (ميه عالية) بيوصله بسهولة. المقاومة = تحليل تركيب الجسم.</p>
+      <p style="margin-top:4px; color:var(--accent);">⚠️ لازم: صيام + ترطيب كافي + متتمرنش 4 ساعات قبل القياس</p>
+    </div>
+    <div class="card">
+      <h3>Waist Circumference</h3>
+      <p>بيقيس الدهون في البطن (visceral fat)</p>
+      <ul>
+        <li>👨 Men: &gt; 40 inches (102 cm) = خطر</li>
+        <li>👩 Women: &gt; 35 inches (88 cm) = خطر</li>
+      </ul>
+      <h3 style="margin-top:6px;">Waist-to-Hip Ratio</h3>
+      <p>نسبة عالية = Android obesity (تفاحة) = خطر أمراض قلب أعلى</p>
+    </div>
+  </div>
+
+  <div class="highlight green-bg">
+    <strong>🏥 Clinical Example:</strong> راجل 68 سنة، BMI 27 (طبيعي ظاهراً)، لكن BIA: body fat 32%, muscle mass 20% below normal<br>
+    → <strong>Sarcopenic Obesity</strong>: دهون زيادة + عضلات ناقصة رغم الوزن الطبيعي<br>
+    → Intervention: Protein 1.2–1.5 g/kg/day + resistance training 3×/week
+  </div>
+
+  <div class="sec-title">📌 عوامل بتأثر على دقة القياس</div>
+  <div class="grid-2">
+    <div class="card"><h3>Hydration Status</h3><p>الجفاف بيزود نسبة الدهون وهمياً. Edema بيخبي الحقيقة.</p></div>
+    <div class="card orange"><h3>Age & Sex</h3><p>الستات طبيعياً عندهم دهون أكتر (essential fat). العضلات بتقل بعد 30 سنة.</p></div>
+    <div class="card green"><h3>Disease States</h3><p>Cancer, liver disease, renal failure — بيغيروا التركيب بشكل خاص.</p></div>
+    <div class="card purple"><h3>Testing Protocol</h3><p>وقت اليوم، الأكل الأخير، وضعية الجسم — كلها بتأثر. لازم تقييس بنفس الظروف دايماً.</p></div>
+  </div>
+
+  <div class="page-num">الصفحة 5</div>
+</div>
+
+<!-- ========================= PAGE 6: TYPES OF DIETS ========================= -->
+<div class="page">
+  <div class="page-header">
+    <span class="icon">🥗</span>
+    <h2>Types of Diets & Clinical Nutrition</h2>
+    <span class="en">أنواع الأنظمة الغذائية</span>
+  </div>
+
+  <div class="sec-title">التقسيم الأساسي للأنظمة الغذائية</div>
+  <div class="compare">
+    <div class="compare-col left">
+      <h4>Normal Diets ✅</h4>
+      <ul>
+        <li>Balanced Diet: كل العناصر بنسبها الصح (45-65% carbs, 10-35% protein, 20-35% fat)</li>
+        <li>مناسبة للأصحاء</li>
+        <li>الأساس: Prevention</li>
+      </ul>
+    </div>
+    <div class="compare-col right">
+      <h4>Therapeutic Diets 💊</h4>
+      <ul>
+        <li>أنظمة معدّلة للحالات المرضية</li>
+        <li>بتعدّل: الكارب، السكر، البروتين، الصوديوم، السعرات</li>
+        <li>الأساس: Treatment + Management</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sec-title">🍚 Low-Carbohydrate Diets</div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>كيف بتشتغل؟</h3>
+      <p>بتقلل الـ glucose intake → بيقل الـ blood sugar → بيقل إفراز الـ insulin → الجسم يستخدم الدهون كطاقة بدل الجلوكوز → weight loss + glycemic control</p>
+    </div>
+    <div class="card green">
+      <h3>Clinical Uses ✅</h3>
+      <ul>
+        <li>Type 2 Diabetes management</li>
+        <li>Obesity & weight reduction</li>
+        <li>Metabolic Syndrome</li>
+        <li>Insulin Resistance</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sec-title">🥩 High-Protein Diets</div>
+  <div class="grid-2">
+    <div class="card purple">
+      <h3>Clinical Uses ✅</h3>
+      <ul>
+        <li>Malnutrition recovery & rehabilitation</li>
+        <li>Burns — يحتاجوا tissue repair</li>
+        <li>Post-surgical wound healing</li>
+        <li>Critical illness & trauma recovery</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>ليه البروتين مهم في الـ weight management؟</h3>
+      <ul>
+        <li>بيزود الشبع per calorie</li>
+        <li>بيحافظ على الـ lean muscle أثناء التخسيس</li>
+        <li>بيدعم الـ metabolic rate ويمنع فقد العضلات</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sec-title">🧈 Low-Fat Diets</div>
+  <div class="highlight blue-bg">
+    <strong>متى؟</strong> Cardiovascular disease + Hyperlipidemia — بيقلل الـ LDL cholesterol ويقلل تكوين الـ atherosclerotic plaques
+  </div>
+
+  <div class="sec-title">🏥 Therapeutic Diets — حالات مرضية محددة</div>
+  <div class="grid-2">
+    <div class="card red">
+      <h3>🩸 Diabetic Diet</h3>
+      <ul>
+        <li>فهم الـ Glycemic Index (GI) للاختيار الصح</li>
+        <li>Carbohydrate counting للـ portion control</li>
+        <li>Consistent meal timing طول اليوم</li>
+        <li>Blood sugar monitoring & adjustment</li>
+      </ul>
+    </div>
+    <div class="card orange">
+      <h3>🫘 Renal Diet</h3>
+      <ul>
+        <li><strong>Protein ↓</strong> — لتقليل الفضلات الضارة بالكلى</li>
+        <li><strong>Sodium ↓</strong> — للتحكم في ضغط الدم</li>
+        <li><strong>Potassium ↓</strong> — لمنع اضطرابات نبضات القلب</li>
+        <li><strong>Phosphorus ↓</strong> — لحماية العظام</li>
+      </ul>
+    </div>
+    <div class="card teal">
+      <h3>❤️ Cardiac Diet</h3>
+      <ul>
+        <li>Saturated fat ↓ (يقلل LDL)</li>
+        <li>Trans fat ↓ خالص</li>
+        <li>Sodium ↓ (ضغط الدم)</li>
+        <li>Fiber ↑ (خضروات، فاكهة، حبوب كاملة)</li>
+        <li>Omega-3 ↑ (سمك، كتان)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>🩺 Weight Management Diets</h3>
+      <ul>
+        <li>Calorie Deficit: للسمنة</li>
+        <li>Calorie Surplus: للـ undernutrition</li>
+        <li>Individualized modifications دايماً</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sec-title">🍽️ Enteral vs Parenteral Nutrition</div>
+  <div class="compare">
+    <div class="compare-col left">
+      <h4>Enteral Nutrition 🧴</h4>
+      <ul>
+        <li>بتوصل الغذاء للـ GI tract عن طريق tube</li>
+        <li>الأفضل لو الـ GI tract شغّال</li>
+        <li>أرخص + أقل complications</li>
+      </ul>
+    </div>
+    <div class="compare-col right">
+      <h4>Parenteral Nutrition 💉</h4>
+      <ul>
+        <li>بتبعت الغذاء directly intravenous</li>
+        <li>لو الـ GI tract مش شغّال</li>
+        <li>أغلى + أكتر خطر</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sec-title">Evidence-Based Dietary Strategies للـ Weight Management</div>
+  <table>
+    <tr><th>Strategy</th><th>الفكرة</th><th>مناسبة لـ</th></tr>
+    <tr><td>Calorie-Restricted</td><td>عجز 500–750 kcal/day</td><td>Obesity — نقص 0.5–1 kg/week</td></tr>
+    <tr><td>Mediterranean Diet</td><td>حبوب كاملة، خضار، زيت زيتون، بروتين نباتي</td><td>Cardiovascular health، دائمي الاتباع</td></tr>
+    <tr><td>Low-Carbohydrate</td><td>كارب 20–130g/day</td><td>Insulin resistance, Type 2 DM</td></tr>
+    <tr><td>High-Protein</td><td>بروتين 1.2–1.6g/kg/day</td><td>حفاظ على العضلات أثناء التخسيس</td></tr>
+    <tr><td>Intermittent Fasting</td><td>16:8 أو 5:2</td><td>Metabolic flexibility، بسّط نمط الأكل</td></tr>
+  </table>
+
+  <div class="page-num">الصفحة 6</div>
+</div>
+
+<!-- ========================= PAGE 7: MEAL PLANNING & SPORTS NUTRITION ========================= -->
+<div class="page">
+  <div class="page-header">
+    <span class="icon">🍽️</span>
+    <h2>Meal Planning & Sports Nutrition</h2>
+    <span class="en">تخطيط الوجبات والتغذية الرياضية</span>
+  </div>
+
+  <div class="sec-title">📋 Clinical Meal Planning</div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>4 Core Principles</h3>
+      <ul>
+        <li><strong>Adequacy:</strong> كل العناصر الغذائية الضرورية</li>
+        <li><strong>Balance:</strong> نسب صح من الـ macros + micros</li>
+        <li><strong>Variety:</strong> تنوع في الاختيارات لضمان الـ micronutrients</li>
+        <li><strong>Moderation:</strong> كميات مناسبة، مش إفراط</li>
+      </ul>
+    </div>
+    <div class="card teal">
+      <h3>Balanced Plate Model 🍽️</h3>
+      <ul>
+        <li><strong>½ الطبق:</strong> Non-starchy vegetables (خضروات ملوّنة)</li>
+        <li><strong>¼ الطبق:</strong> Protein (لحمة، سمك، بيض، بقوليات)</li>
+        <li><strong>¼ الطبق:</strong> Whole grains (كارب معقد)</li>
+        <li>+ Healthy fats (زيت زيتون، أفوكادو)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <div class="page-header" style="background: var(--green); margin-top:4px;">
+    <span class="icon">🏃</span>
+    <h2>Sports Nutrition</h2>
+    <span class="en">التغذية الرياضية</span>
+  </div>
+
+  <div class="sec-title">⚡ Energy Requirements للـ Athletes</div>
+  <div class="grid-2">
+    <div class="card purple">
+      <h3>TEE for Athletes</h3>
+      <p>TEE = BMR + Physical Activity + Thermic Effect</p>
+      <p>الـ Endurance Athletes ممكن يحتاجوا:</p>
+      <p style="font-size:16px; font-weight:900; color:var(--purple);">3,000–5,000+ kcal/day</p>
+    </div>
+    <div class="card red">
+      <h3>Energy Availability (EA)</h3>
+      <p>الطاقة المتبقية للوظائف الفسيولوجية بعد ما الجسم يحرق في التمرين.</p>
+      <p style="color:var(--accent); margin-top:4px;"><strong>Low EA = RED-S</strong> (Relative Energy Deficiency in Sport)</p>
+      <p>→ تعب، إصابات أكتر، مناعة ضعيفة، تعافي بطيء</p>
+    </div>
+  </div>
+
+  <div class="sec-title">🥗 Macronutrient Distribution للـ Athletes</div>
+  <div class="grid-3">
+    <div class="card teal">
+      <h3>🍞 Carbs — 55%</h3>
+      <p>الوقود الأساسي للتمرين الشديد</p>
+      <ul>
+        <li>Glycogen store: عضلات ~400g + كبد ~100g</li>
+        <li>General: <strong>5–10 g/kg/day</strong></li>
+        <li>Light: 5 g/kg | Moderate: 7 | Heavy: 10</li>
+        <li>Carb Loading: 6–10 g/kg لـ 36-48 ساعة قبل events &gt;90 دقيقة</li>
+      </ul>
+    </div>
+    <div class="card orange">
+      <h3>🥩 Protein — 18%</h3>
+      <ul>
+        <li><strong>1.2–2.0 g/kg/day</strong></li>
+        <li>Endurance: 1.2–1.4 g/kg</li>
+        <li>Strength/Power: 1.6–2.0 g/kg</li>
+        <li>لبناء العضلات وإصلاحها</li>
+        <li>Timing: Post-exercise window (0–60 min) مهم جداً</li>
+      </ul>
+    </div>
+    <div class="card purple">
+      <h3>🧈 Fat — 27%</h3>
+      <ul>
+        <li><strong>20–30%</strong> من الطاقة الكلية</li>
+        <li>الوقود الأساسي في التمرين الطويل المنخفض الشدة</li>
+        <li>مهم لامتصاص فيتامينات A, D, E, K</li>
+        <li>إنتاج الهرمونات الستيرويدية</li>
+        <li>Prefer: Unsaturated fats + Omega-3</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sec-title">⏰ Nutrient Timing — وقت الأكل مهم</div>
+  <div class="grid-3">
+    <div class="card">
+      <h3>Pre-Exercise (2–4 ساعات قبل)</h3>
+      <p>High carbs + moderate protein + low fat + low fiber<br>علشان تضمن glycogen availability</p>
+    </div>
+    <div class="card orange">
+      <h3>During Exercise (كل 60 دقيقة)</h3>
+      <p>30–60g carbs/hour للـ events أكتر من 60 دقيقة<br>Fluids + electrolytes لمنع الـ dehydration</p>
+    </div>
+    <div class="card green">
+      <h3>Post-Exercise (30–60 دقيقة بعد)</h3>
+      <p>Carbs + Protein بنسبة <strong>3:1</strong><br>لتجديد الـ glycogen + تحفيز muscle protein synthesis</p>
+    </div>
+  </div>
+
+  <div class="sec-title">💧 Micronutrients & Hydration للـ Athletes</div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>Micronutrients الأهم</h3>
+      <ul>
+        <li><strong>Iron:</strong> نقل الأكسجين. النساء والـ endurance athletes أعلى خطر نقص</li>
+        <li><strong>Calcium + Vitamin D:</strong> عظام + تقلص عضلي. نقصها = stress fractures</li>
+        <li><strong>B Vitamins:</strong> Coenzymes في إنتاج الطاقة (ATP)</li>
+      </ul>
+    </div>
+    <div class="card teal">
+      <h3>Hydration</h3>
+      <ul>
+        <li>Baseline: 2–3 L/day + losses من التمرين</li>
+        <li>حتى 2% dehydration بيأثر سلباً على الأداء</li>
+        <li>لازم تعوّض: Sodium (Na⁺) + Potassium (K⁺)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sec-title">🎯 نموذج وجبات للرياضي</div>
+  <div class="grid-4" style="font-size:10px;">
+    <div class="card" style="text-align:center;">
+      <h3 style="justify-content:center; font-size:11px;">🌅 Breakfast</h3>
+      <p>Oats + موز + حليب + عسل</p>
+    </div>
+    <div class="card teal" style="text-align:center;">
+      <h3 style="justify-content:center; font-size:11px;">🌞 Lunch</h3>
+      <p>أرز + فراخ مشوية + خضار + زيت زيتون</p>
+    </div>
+    <div class="card green" style="text-align:center;">
+      <h3 style="justify-content:center; font-size:11px;">🍎 Snack</h3>
+      <p>Greek yogurt + مكسرات + توت</p>
+    </div>
+    <div class="card purple" style="text-align:center;">
+      <h3 style="justify-content:center; font-size:11px;">🌙 Dinner</h3>
+      <p>معكرونة + لحمة قليلة الدهن + صلاطة</p>
+    </div>
+  </div>
+
+  <div class="highlight red-bg">
+    <strong>⚠️ Special Populations:</strong><br>
+    🏊 <strong>Female Athletes:</strong> خطر أعلى لنقص الحديد وضعف كثافة العظام — راقب الـ RED-S باستمرار<br>
+    🥊 <strong>Weight-Class Sports:</strong> (مصارعة، جيمناستيك) خطر الحميات القاسية قبل المنافسة — بتضر الصحة
+  </div>
+
+  <div class="page-num">الصفحة 7</div>
+</div>
+
+<!-- ========================= PAGE 8: GLYCEMIC INDEX ========================= -->
+<div class="page">
+  <div class="page-header">
+    <span class="icon">📊</span>
+    <h2>Glycemic Index (GI)</h2>
+    <span class="en">مؤشر نسبة السكر في الدم</span>
+  </div>
+
+  <div class="sec-title">إيه هو الـ GI؟</div>
+  <p style="font-size:11px; margin-bottom:8px;">الـ <strong>Glycemic Index</strong> هو تصنيف للكارب على سلم من <strong>0 لـ 100</strong> بناءً على مدى سرعة رفعه لـ blood glucose بعد الأكل.</p>
+
+  <div class="grid-2">
+    <div class="card teal">
+      <h3>التعريف الدقيق</h3>
+      <p>هو الارتفاع في الـ blood glucose concentration بعد أكل <strong>50g</strong> من الكارب من الغذاء المختبر مقارنةً بـ <strong>50g glucose أو starchy reference food</strong></p>
+    </div>
+    <div class="card">
+      <h3>معادلة الحساب</h3>
+      <div class="formula" style="font-size:10px; padding:6px;">
+        GI = (Area under blood glucose curve / Test meal) ÷ (Area under curve / Reference meal) × 100
+      </div>
+      <p style="font-size:10px; margin-top:4px;">بيُحسب على مدى ساعتين بعد الأكل</p>
+    </div>
+  </div>
+
+  <div class="sec-title">📊 تصنيف الأطعمة حسب الـ GI</div>
+  <div class="grid-3">
+    <div class="card green" style="text-align:center;">
+      <h3 style="justify-content:center; font-size:18px;">🟢 Low GI</h3>
+      <p style="font-size:22px; font-weight:900; color:var(--green);">≤ 55</p>
+      <p>خضروات، فاكهة، بقوليات، لبن، حبوب كاملة</p>
+    </div>
+    <div class="card orange" style="text-align:center;">
+      <h3 style="justify-content:center; font-size:18px;">🟡 Mid GI</h3>
+      <p style="font-size:22px; font-weight:900; color:var(--orange);">56–69</p>
+      <p>موز، أرز بني، خبز القمح الكامل</p>
+    </div>
+    <div class="card red" style="text-align:center;">
+      <h3 style="justify-content:center; font-size:18px;">🔴 High GI</h3>
+      <p style="font-size:22px; font-weight:900; color:var(--accent);">≥ 70</p>
+      <p>خبز أبيض، جلوكوز، بطاطس، أرز أبيض، رز</p>
+    </div>
+  </div>
+
+  <div class="sec-title">📋 قيم الـ GI لأطعمة مختلفة</div>
+  <table>
+    <tr><th>Carbohydrate / Food</th><th>GI</th><th>ملاحظة</th></tr>
+    <tr><td>Glucose</td><td style="font-weight:900; color:var(--accent);">100</td><td>الـ reference</td></tr>
+    <tr><td>Galactose, Maltose, Lactose</td><td style="color:var(--accent);">~100 (GI = 1.0)</td><td>بتترفع زي الجلوكوز</td></tr>
+    <tr><td>Potato (بطاطس)</td><td style="color:var(--accent);">80–90</td><td>High GI رغم إنه طبيعي</td></tr>
+    <tr><td>Bread, Polished Rice (خبز، أرز أبيض)</td><td style="color:var(--orange);">70–80</td><td>High GI</td></tr>
+    <tr><td>Brown rice, Banana (أرز بني، موز)</td><td style="color:var(--orange);">60–70</td><td>Mid GI</td></tr>
+    <tr><td>Sweet Potato (بطاطا حلوة)</td><td style="color:var(--teal);">50–60</td><td>Mid-Low</td></tr>
+    <tr><td>Fructose, Sucrose</td><td style="color:var(--teal);">&lt; 1.0 (نسبي)</td><td>بتتمتص أبطأ من الجلوكوز</td></tr>
+    <tr><td>Orange, Apple (برتقان، تفاح)</td><td style="color:var(--green);">40–45</td><td>Low GI</td></tr>
+    <tr><td>Milk, Ice Cream (لبن، آيس كريم)</td><td style="color:var(--green);">35–40</td><td>Low GI (fat يبطّء)</td></tr>
+    <tr><td>Soy Beans (فول صويا)</td><td style="color:var(--green);">15–20</td><td>Low GI جداً</td></tr>
+    <tr><td>Starch</td><td>Varies near 0–100</td><td>حسب نوع الهيدروليزيس</td></tr>
+    <tr><td>Non-Starch Polysaccharides (Fiber)</td><td style="color:var(--green); font-weight:900;">GI = 0</td><td>مش بيترفع خالص</td></tr>
+  </table>
+
+  <div class="sec-title">🎯 الأهمية الطبية للـ GI — Biomedical Importance</div>
+  <div class="grid-2">
+    <div>
+      <div class="card green" style="margin-bottom:8px;">
+        <h3>1️⃣ Less Insulin Fluctuation</h3>
+        <p>الـ Low GI بيسبب تذبذب أقل في الـ insulin secretion → أفضل للصحة على المدى البعيد</p>
+      </div>
+      <div class="card teal">
+        <h3>3️⃣ Weight Control</h3>
+        <p>الـ Low GI بيعمل شعور بالشبع لفترة أطول ويمنع الجوع → يساعد في تقليل السعرات الكلية</p>
+      </div>
+    </div>
+    <div>
+      <div class="card red" style="margin-bottom:8px;">
+        <h3>2️⃣ Disease Prevention</h3>
+        <p>الأطعمة الـ High GI مسؤولة بشكل كبير عن: <strong>Obesity، Insulin Resistance، Type 2 Diabetes Mellitus</strong></p>
+      </div>
+      <div class="card orange">
+        <h3>4️⃣ Reduces Cholesterol</h3>
+        <p>أنظمة High-Fiber + Low GI بتقلل الـ Total cholesterol والـ LDL بشكل ملحوظ — بمعزل عن فقدان الوزن</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-title">⚙️ إيه اللي بيأثر على الـ GI؟</div>
+  <div class="highlight">
+    <strong>الـ GI بيتأثر بـ:</strong> نوع وكمية الكارب | محتوى الـ Fat والـ Protein والـ Fiber في الأكلة | طريقة الطهي | درجة النضج (الموز الأصفر أعلى GI من الأخضر)
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>Complex Carbs (Whole Grains) 🌾</h3>
+      <p>GI أقل من الـ Refined Carbs لأن بتتهضم أبطأ</p>
+    </div>
+    <div class="card green">
+      <h3>High GI Foods 🔴</h3>
+      <p>بتترفع وبتنزل بسرعة (rapid rise → steep fall) في الـ blood glucose</p>
+    </div>
+    <div class="card teal">
+      <h3>Low GI Foods 🟢</h3>
+      <p>بتترفع بهدوء وبتنزل بهدوء (gradual rise → slow decline) — أكثر استقراراً</p>
+    </div>
+    <div class="card orange">
+      <h3>Ice Cream مثال مثير</h3>
+      <p>Low GI (35–40) رغم إنه حلو! لأن الدهون فيه بتبطّء امتصاص السكر</p>
+    </div>
+  </div>
+
+  <div class="page-num">الصفحة 8</div>
+</div>
+
+<!-- ========================= PAGE 9: WEIGHT MANAGEMENT - DEEPER ========================= -->
+<div class="page">
+  <div class="page-header">
+    <span class="icon">🧠</span>
+    <h2>Psychological Factors & Weight Maintenance</h2>
+    <span class="en">العوامل النفسية والحفاظ على الوزن</span>
+  </div>
+
+  <div class="sec-title">🧠 أسباب زيادة الوزن — Multifactorial Causes</div>
+  <div class="grid-3">
+    <div class="card red"><h3>01 Excess Caloric Intake</h3><p>أكل سعرات أكتر من الاحتياج — portion distortion + frequent snacking</p></div>
+    <div class="card orange"><h3>02 Physical Inactivity</h3><p>قلة الحركة والتمارين → نقص الـ energy expenditure + تراجع الـ metabolic rate</p></div>
+    <div class="card"><h3>03 Genetic Factors</h3><p>تأثير على الـ metabolism، الشهية، تخزين الدهون</p></div>
+    <div class="card purple"><h3>04 Hormonal Imbalance</h3><p>Hypothyroidism, PCOS, Cortisol excess — بتأثر على التمثيل الغذائي</p></div>
+    <div class="card teal"><h3>05 Psychological Factors</h3><p>Emotional eating, stress, depression, اضطرابات الأكل</p></div>
+    <div class="card green"><h3>06 Environmental Influences</h3><p>توافر الأكل، التسويق، العوامل الاجتماعية والاقتصادية</p></div>
+  </div>
+
+  <div class="sec-title">🧠 Understanding Psychological Factors</div>
+  <div class="grid-2">
+    <div class="card red">
+      <h3>Emotional Eating</h3>
+      <p>استخدام الأكل كـ coping mechanism للمشاعر بدل الجوع الحقيقي</p>
+    </div>
+    <div class="card orange">
+      <h3>Chronic Stress</h3>
+      <p>ارتفاع الـ Cortisol → زيادة دهون البطن + cravings للأكل العالي سعرات</p>
+    </div>
+    <div class="card purple">
+      <h3>Depression</h3>
+      <p>بيأثر على تنظيم الشهية + الدافعية + الاهتمام بالصحة الذاتية</p>
+    </div>
+    <div class="card teal">
+      <h3>Sleep Deprivation</h3>
+      <p>بيعطل هرمونات الجوع (Ghrelin ↑, Leptin ↓) → أكل أكتر وسعرات أعلى</p>
+    </div>
+  </div>
+
+  <div class="highlight purple-bg">
+    <strong>Research:</strong> معالجة الصحة النفسية بيحسّن نتائج الـ weight management بنسبة <strong>40–60%</strong>
+  </div>
+
+  <div class="sec-title">🎯 Behavioral Strategies for Success</div>
+  <div class="grid-3">
+    <div class="card"><h3>01 Goal Setting</h3><p>أهداف specific, measurable, achievable, relevant, time-bound (SMART)</p></div>
+    <div class="card green"><h3>02 Self-Monitoring</h3><p>تسجيل الأكل والنشاط يومياً لزيادة الوعي والمسؤولية</p></div>
+    <div class="card teal"><h3>03 Food Diaries</h3><p>توثيق أنماط الأكل والـ triggers والـ emotional connections</p></div>
+    <div class="card orange"><h3>04 Portion Control</h3><p>تعلم الـ serving sizes وممارسة الأكل الواعي (mindful eating)</p></div>
+    <div class="card purple"><h3>05 Stress Management</h3><p>معالجة الـ emotional eating بـ CBT وآليات تكيف صحية</p></div>
+    <div class="card red"><h3>06 Tracking Apps</h3><p>MyFitnessPal, Cronometer, LoseIt! — لحساب دقيق يومي</p></div>
+  </div>
+
+  <div class="sec-title">💪 Importance of Physical Activity</div>
+  <div class="highlight green-bg">
+    <strong>WHO Recommendation:</strong> 150–300 دقيقة/أسبوع moderate-intensity aerobic activity = 30–60 دقيقة معظم أيام الأسبوع
+  </div>
+  <div class="grid-3">
+    <div class="card"><h3>Increased Energy Expenditure</h3><p>حرق سعرات أثناء وبعد التمرين (elevated metabolic rate)</p></div>
+    <div class="card green"><h3>Preserve Lean Muscle</h3><p>الحفاظ على العضلات أثناء التخسيس لحماية الـ metabolic rate</p></div>
+    <div class="card teal"><h3>Improved Metabolism</h3><p>تحسين الـ insulin sensitivity والـ metabolic health markers</p></div>
+  </div>
+
+  <div class="sec-title">🏆 Weight Loss Maintenance — التحدي الحقيقي</div>
+  <div class="highlight red-bg"><strong>⚠️ Research Shows:</strong> 80% من الناس بيرجعوا وزنهم في خلال 5 سنين بدون support مستمر!</div>
+  
+  <div class="grid-2">
+    <div>
+      <div class="card green" style="margin-bottom:8px;"><h3>✅ Regular Physical Activity</h3><p>تمرين منتظم يمنع الـ metabolic adaptation ويحافظ على العضلات</p></div>
+      <div class="card teal"><h3>✅ Consistent Patterns</h3><p>مواعيد أكل ثابتة بتستقر هرمونات الجوع</p></div>
+    </div>
+    <div>
+      <div class="card orange" style="margin-bottom:8px;"><h3>✅ Behavioral Change</h3><p>تغيير حقيقي في التفكير والعادات، مش قيود مؤقتة</p></div>
+      <div class="card purple"><h3>✅ Ongoing Monitoring</h3><p>متابعة منتظمة تمسك زيادة الوزن الصغيرة قبل تتفاقم</p></div>
+    </div>
+  </div>
+
+  <div class="sec-title">❌ خرافات شائعة — Debunking Myths</div>
+  <table>
+    <tr><th>Myth (الخرافة)</th><th>Truth (الحقيقة)</th></tr>
+    <tr><td>"الكارب بيعمل سمنة"</td><td>السعرات الكلية هي اللي بتحدد الوزن — مش نوع الـ macronutrient. الكارب المعقد + الـ fiber مفيد جداً</td></tr>
+    <tr><td>"تخطي الوجبات بيخسّس"</td><td>بيعطل الـ blood sugar، بيزود الجوع، وبيأدي لأكل أكتر بعدين</td></tr>
+    <tr><td>"التخسيس السريع صح"</td><td>خسارة أكتر من 1–2 كيلو/أسبوع = فقدان عضلات. الهدف: 5–10% في 6–12 شهر</td></tr>
+  </table>
+
+  <div class="page-num">الصفحة 9</div>
+</div>
+
+<!-- ========================= PAGE 10: SUMMARY 1 ========================= -->
+<div class="page">
+  <div class="summary-header">
+    <h2>📌 ملخص سريع — Quick Reference Sheet 1</h2>
+    <p>أهم النقاط للمراجعة الأخيرة قبل الامتحان ⚡</p>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div class="sec-title">🍽️ Nutrients — الأرقام المهمة</div>
+      <table>
+        <tr><th>Nutrient</th><th>Energy</th><th>Daily %</th></tr>
+        <tr><td>Carbohydrates</td><td>4 kcal/g</td><td>45–65%</td></tr>
+        <tr><td>Protein</td><td>4 kcal/g</td><td>10–35%</td></tr>
+        <tr><td>Fat</td><td>9 kcal/g</td><td>20–35%</td></tr>
+        <tr><td>Water / Vit / Min</td><td>0 kcal/g</td><td>—</td></tr>
+      </table>
+
+      <div class="sec-title">💊 Vitamins — Fat vs Water Soluble</div>
+      <table>
+        <tr><th>Type</th><th>Vitamins</th><th>بتتخزن؟</th></tr>
+        <tr><td>Fat Soluble</td><td>A, D, E, K</td><td style="color:var(--green);">✅ نعم</td></tr>
+        <tr><td>Water Soluble</td><td>C, B1,2,3,5,6,7,9,12</td><td style="color:var(--accent);">❌ لأ</td></tr>
+      </table>
+
+      <div class="sec-title">📊 BMI Classification</div>
+      <table>
+        <tr><th>Category</th><th>BMI</th></tr>
+        <tr><td>Underweight</td><td>&lt; 18.5</td></tr>
+        <tr><td>Normal</td><td>18.5–24.9</td></tr>
+        <tr><td>Overweight</td><td>25–29.9</td></tr>
+        <tr><td>Obese</td><td>≥ 30</td></tr>
+      </table>
+
+      <div class="sec-title">🧮 BMR Formula (Mifflin-St Jeor)</div>
+      <div class="formula" style="font-size:9.5px; direction:ltr; text-align:right;">
+        MEN: (10×kg) + (6.25×cm) - (5×age) + 5<br>
+        WOMEN: (10×kg) + (6.25×cm) - (5×age) - 161
+      </div>
+
+      <div class="sec-title">📈 Activity Multipliers</div>
+      <table>
+        <tr><th>Level</th><th>Multiplier</th></tr>
+        <tr><td>Sedentary</td><td>× 1.2</td></tr>
+        <tr><td>Lightly Active</td><td>× 1.375</td></tr>
+        <tr><td>Moderately Active</td><td>× 1.55</td></tr>
+        <tr><td>Very Active</td><td>× 1.725</td></tr>
+        <tr><td>Extra Active</td><td>× 1.9</td></tr>
+      </table>
+    </div>
+
+    <div>
+      <div class="sec-title">🎯 Weight Goal Adjustments</div>
+      <table>
+        <tr><th>Goal</th><th>Strategy</th></tr>
+        <tr><td>Fat Loss</td><td>TDEE – 300 to 500 kcal</td></tr>
+        <tr><td>Maintenance</td><td>= TDEE</td></tr>
+        <tr><td>Muscle Gain</td><td>TDEE + 200 to 300 kcal</td></tr>
+      </table>
+
+      <div class="sec-title">📊 GI Categories</div>
+      <table>
+        <tr><th>Category</th><th>GI Range</th><th>Examples</th></tr>
+        <tr><td>Low GI 🟢</td><td>≤ 55</td><td>Soy (15-20), Apple (40-45), Milk (35-40)</td></tr>
+        <tr><td>Mid GI 🟡</td><td>56–69</td><td>Brown rice, Banana (60-70)</td></tr>
+        <tr><td>High GI 🔴</td><td>≥ 70</td><td>Glucose (100), Potato (80-90), White bread (70-80)</td></tr>
+      </table>
+
+      <div class="sec-title">🏋️ Body Composition Methods</div>
+      <table>
+        <tr><th>Method</th><th>Accuracy</th><th>Use</th></tr>
+        <tr><td>BMI</td><td>Low</td><td>Screening only</td></tr>
+        <tr><td>Skinfold</td><td>Moderate</td><td>Field</td></tr>
+        <tr><td>BIA ⭐</td><td>Good</td><td>Routine clinical</td></tr>
+        <tr><td>DEXA</td><td>Excellent</td><td>Reference</td></tr>
+        <tr><td>CT/MRI</td><td>Excellent</td><td>Research</td></tr>
+      </table>
+
+      <div class="sec-title">🏃 Sports Protein Intake</div>
+      <table>
+        <tr><th>Type</th><th>g/kg/day</th></tr>
+        <tr><td>Endurance athletes</td><td>1.2–1.4</td></tr>
+        <tr><td>Strength/Power athletes</td><td>1.6–2.0</td></tr>
+        <tr><td>Carb loading</td><td>6–10 g/kg for 36-48h</td></tr>
+        <tr><td>General carbs</td><td>5–10 g/kg/day</td></tr>
+      </table>
+
+      <div class="sec-title">🔵 Amino Acids</div>
+      <div class="highlight blue-bg">
+        Total = <strong>20</strong> amino acids<br>
+        Body makes = <strong>11</strong> (non-essential)<br>
+        Must eat = <strong>9</strong> (essential)<br>
+        Animal proteins = Complete (have all 9 essential)
+      </div>
+    </div>
+  </div>
+
+  <div class="page-num">الصفحة 10 — ملخص 1</div>
+</div>
+
+<!-- ========================= PAGE 11: SUMMARY 2 - COMPARISONS ========================= -->
+<div class="page">
+  <div class="summary-header" style="background: linear-gradient(135deg, var(--green), #1b5e20);">
+    <h2>📊 ملخص المتشابهات والفروقات — Comparison Sheet</h2>
+    <p>الحاجات اللي بتتلخبط فيها 🎯</p>
+  </div>
+
+  <div class="sec-title">⚖️ الفروق المهمة بالسرعة</div>
+  
+  <table style="margin-bottom:10px;">
+    <tr>
+      <th>المقارنة</th>
+      <th>الأول</th>
+      <th>الثاني</th>
+    </tr>
+    <tr>
+      <td><strong>Macronutrients vs Micronutrients</strong></td>
+      <td>Carbs, Protein, Fat — بيدوا طاقة</td>
+      <td>Vitamins, Minerals, Water — مش بيدوا طاقة</td>
+    </tr>
+    <tr>
+      <td><strong>Fat Soluble vs Water Soluble Vitamins</strong></td>
+      <td>A, D, E, K — بتتخزن في الجسم</td>
+      <td>C, B vitamins — مش بتتخزن، لازم يومي</td>
+    </tr>
+    <tr>
+      <td><strong>Complete vs Incomplete Protein</strong></td>
+      <td>Animal source — has all 9 essential AA</td>
+      <td>Plant source — ناقص بعض الـ essential AA</td>
+    </tr>
+    <tr>
+      <td><strong>Simple vs Complex Carbs</strong></td>
+      <td>Mono/Disaccharides — بتترفع بسرعة (High GI)</td>
+      <td>Polysaccharides/Starch — أبطأ (Lower GI)</td>
+    </tr>
+    <tr>
+      <td><strong>BMR vs TDEE</strong></td>
+      <td>BMR = طاقة الجسم في الراحة التامة</td>
+      <td>TDEE = BMR + كل الأنشطة اليومية + هضم</td>
+    </tr>
+    <tr>
+      <td><strong>Unsaturated vs Saturated vs Trans Fats</strong></td>
+      <td>Unsaturated = مفيد ✅</td>
+      <td>Saturated = محدود ⚠️ | Trans = ضار ❌</td>
+    </tr>
+    <tr>
+      <td><strong>Enteral vs Parenteral Nutrition</strong></td>
+      <td>Enteral = عن طريق الـ GI tract (tube)</td>
+      <td>Parenteral = Intravenous (لو GI مش شغّال)</td>
+    </tr>
+    <tr>
+      <td><strong>High GI vs Low GI</strong></td>
+      <td>High GI ≥70: سريع الامتصاص، spike في السكر</td>
+      <td>Low GI ≤55: بطيء، مستقر، أفضل للصحة</td>
+    </tr>
+    <tr>
+      <td><strong>Fat Mass vs Fat-Free Mass</strong></td>
+      <td>FM = الدهون (subcutaneous + visceral)</td>
+      <td>FFM = عضلات + عظام + أعضاء + ميه</td>
+    </tr>
+    <tr>
+      <td><strong>Normal vs Therapeutic Diet</strong></td>
+      <td>Normal = للأصحاء، prevention</td>
+      <td>Therapeutic = للمرضى، treatment وإدارة مرض</td>
+    </tr>
+  </table>
+
+  <div class="two-col">
+    <div>
+      <div class="sec-title">🔢 الأرقام اللي لازم تحفظها</div>
+      <div class="steps">
+        <div class="step"><div class="step-num">📌</div><div class="step-content"><strong>Energy:</strong> Carbs & Protein = 4 kcal/g | Fat = 9 kcal/g | Water/Vit/Min = 0</div></div>
+        <div class="step"><div class="step-num">📌</div><div class="step-content"><strong>Daily %:</strong> Carbs 45-65% | Protein 10-35% | Fat 20-35%</div></div>
+        <div class="step"><div class="step-num">📌</div><div class="step-content"><strong>Amino Acids:</strong> Total 20 | Essential 9 | Non-essential 11</div></div>
+        <div class="step"><div class="step-num">📌</div><div class="step-content"><strong>BMI:</strong> &lt;18.5 Under | 18.5-24.9 Normal | 25-29.9 Over | ≥30 Obese</div></div>
+        <div class="step"><div class="step-num">📌</div><div class="step-content"><strong>Body Water:</strong> 65% من الجسم ميه!</div></div>
+        <div class="step"><div class="step-num">📌</div><div class="step-content"><strong>GI:</strong> Low ≤55 | Mid 56-69 | High ≥70</div></div>
+        <div class="step"><div class="step-num">📌</div><div class="step-content"><strong>Carb loading:</strong> 6-10 g/kg/day لـ 36-48 ساعة</div></div>
+        <div class="step"><div class="step-num">📌</div><div class="step-content"><strong>Glycogen stores:</strong> Muscle ~400g | Liver ~100g</div></div>
+        <div class="step"><div class="step-num">📌</div><div class="step-content"><strong>WHO Activity:</strong> 150-300 دقيقة/أسبوع moderate activity</div></div>
+        <div class="step"><div class="step-num">📌</div><div class="step-content"><strong>Weight regain:</strong> 80% بيرجعوا وزنهم خلال 5 سنين</div></div>
+        <div class="step"><div class="step-num">📌</div><div class="step-content"><strong>BMR components:</strong> 60-70% من الـ total expenditure</div></div>
+        <div class="step"><div class="step-num">📌</div><div class="step-content"><strong>TEF:</strong> ~10% من الطاقة لعملية الهضم نفسها</div></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="sec-title">🏥 Therapeutic Diets — One-Liner</div>
+      <table>
+        <tr><th>Diet</th><th>الهدف</th><th>Restrict</th></tr>
+        <tr><td>Diabetic</td><td>Glycemic control</td><td>Simple Carbs, High GI</td></tr>
+        <tr><td>Renal</td><td>حماية الكلى</td><td>Protein, Na, K, Phosphorus</td></tr>
+        <tr><td>Cardiac</td><td>صحة القلب</td><td>Saturated/Trans fat, Na</td></tr>
+        <tr><td>Low-Carb</td><td>Weight + DM</td><td>Carbs ↓ drastically</td></tr>
+        <tr><td>High-Protein</td><td>Wound healing</td><td>— (زود بس)</td></tr>
+        <tr><td>Low-Fat</td><td>Hyperlipidemia</td><td>Fat → ↓ LDL</td></tr>
+      </table>
+
+      <div class="sec-title">📋 Food Groups (5)</div>
+      <div class="highlight blue-bg">
+        1️⃣ Vegetables & Legumes<br>
+        2️⃣ Fruits<br>
+        3️⃣ Grains — mostly wholegrain<br>
+        4️⃣ Lean meats, fish, eggs, nuts & seeds<br>
+        5️⃣ Milk, yogurt, cheese — reduced fat
+      </div>
+
+      <div class="sec-title">🚦 Traffic Light System</div>
+      <table>
+        <tr><th>Color</th><th>Meaning</th><th>Sugar Example</th></tr>
+        <tr><td>🟢 Green</td><td>Low — اكل عادي</td><td>&lt; 5g/100g</td></tr>
+        <tr><td>🟡 Amber</td><td>Medium — معقول</td><td>5–22.5g/100g</td></tr>
+        <tr><td>🔴 Red</td><td>High — بالقليل</td><td>&gt; 22.5g/100g</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="page-num">الصفحة 11 — ملخص 2</div>
+</div>
+
+<!-- ========================= PAGE 12: FINAL CHEAT SHEET ========================= -->
+<div class="page">
+  <div class="summary-header" style="background: linear-gradient(135deg, #6b2d8b, #3a0a5c);">
+    <h2>⚡ الـ Cheat Sheet النهائي — اقرأه قبل دخول الامتحان مباشرة</h2>
+    <p>أهم الحاجات في أقل الكلام ✨</p>
+  </div>
+
+  <div class="grid-2" style="gap:10px;">
+
+    <div>
+      <div class="card" style="background:#fff8f0; border-right:4px solid #f4a261; margin-bottom:8px;">
+        <h3>🍎 NUTRIENTS IN 30 SECONDS</h3>
+        <p>
+          <span class="badge orange">Macros = Energy</span> Carbs(4) + Protein(4) + Fat(9) kcal/g<br>
+          <span class="badge blue">Micros = No Energy</span> Vitamins + Minerals + Water<br>
+          <strong>Water = 0 kcal | 65% of body | Essential for all life</strong>
+        </p>
+      </div>
+
+      <div class="card" style="background:#f0fff4; border-right:4px solid var(--green); margin-bottom:8px;">
+        <h3>🧮 BMR FORMULAS — JUST MEMORIZE</h3>
+        <p style="direction:ltr; text-align:right; font-family:monospace; font-size:10px;">
+          Men: (10W) + (6.25H) - (5A) + 5<br>
+          Women: (10W) + (6.25H) - (5A) - 161<br>
+          <strong>TDEE = BMR × Activity Multiplier</strong>
+        </p>
+      </div>
+
+      <div class="card" style="background:#fef3f3; border-right:4px solid var(--accent); margin-bottom:8px;">
+        <h3>📊 GI — THE 3 NUMBERS</h3>
+        <p>
+          🟢 Low ≤ <strong>55</strong> | 🟡 Mid <strong>56–69</strong> | 🔴 High ≥ <strong>70</strong><br>
+          High GI → rapid rise → spike → crash → hunger again<br>
+          Low GI → slow rise → stable → satiety → better health<br>
+          <strong>High GI → Obesity + Insulin Resistance + T2DM</strong>
+        </p>
+      </div>
+
+      <div class="card" style="background:#f0f4ff; border-right:4px solid var(--teal); margin-bottom:8px;">
+        <h3>💊 VITAMINS — ADEK vs BCwater</h3>
+        <p>
+          <strong>ADEK</strong> = Fat Soluble = بتتخزن ⚠️ (Toxicity possible)<br>
+          <strong>C + all B's</strong> = Water Soluble = مش بتتخزن (لازم يومي)<br>
+          Antioxidants: E, C, B7 (Biotin)
+        </p>
+      </div>
+
+      <div class="card" style="background:#fdf4ff; border-right:4px solid var(--purple);">
+        <h3>🥩 PROTEIN ESSENTIALS</h3>
+        <p>
+          Total AA = <strong>20</strong> | Essential = <strong>9</strong> | Body makes = <strong>11</strong><br>
+          Animal = Complete (all 9 essential)<br>
+          Plant = Incomplete (need combination)<br>
+          Athletes: 1.2–2.0 g/kg | Post-exercise window: 30–60 min
+        </p>
+      </div>
+    </div>
+
+    <div>
+      <div class="card" style="background:#fff8f0; border-right:4px solid #f4a261; margin-bottom:8px;">
+        <h3>🏋️ BODY COMPOSITION QUICK</h3>
+        <p>
+          FM + FFM = Total Body Weight<br>
+          <strong>BIA</strong> = best clinical tool (electrical current through body)<br>
+          <strong>DEXA</strong> = gold standard (expensive)<br>
+          Normal fat: Men 10–20% | Women 20–30%<br>
+          Waist risk: Men &gt;40in | Women &gt;35in
+        </p>
+      </div>
+
+      <div class="card" style="background:#f0fff4; border-right:4px solid var(--green); margin-bottom:8px;">
+        <h3>🏃 SPORTS NUTRITION SNAPSHOT</h3>
+        <p>
+          Carbs: <strong>55%</strong> | Protein: <strong>18%</strong> | Fat: <strong>27%</strong><br>
+          Pre: High carb + mod protein, 2–4hr before<br>
+          During: 30–60g carbs/hr + fluids<br>
+          Post: Carb:Protein <strong>3:1</strong> within 30–60 min<br>
+          Carb loading: 6–10 g/kg for 36–48h (endurance &gt;90min)
+        </p>
+      </div>
+
+      <div class="card" style="background:#fef3f3; border-right:4px solid var(--accent); margin-bottom:8px;">
+        <h3>🏥 THERAPEUTIC DIETS FLASH</h3>
+        <p>
+          <strong>Diabetic:</strong> Low GI + Carb counting + meal timing<br>
+          <strong>Renal:</strong> ↓Protein ↓Na ↓K ↓Phosphorus<br>
+          <strong>Cardiac:</strong> ↓Sat fat ↓Trans fat ↓Na ↑Fiber ↑Omega-3<br>
+          <strong>Low-Carb:</strong> T2DM + Obesity + Metabolic syndrome<br>
+          <strong>High-Protein:</strong> Burns + Surgery + Malnutrition
+        </p>
+      </div>
+
+      <div class="card" style="background:#f0f4ff; border-right:4px solid var(--teal); margin-bottom:8px;">
+        <h3>⚖️ WEIGHT MANAGEMENT KEY</h3>
+        <p>
+          BMR = 60–70% of daily expenditure<br>
+          Physical Activity = most variable component<br>
+          TEF (Thermic Effect of Food) = ~10%<br>
+          Lose weight: TDEE – 300 to 500 kcal<br>
+          Gain muscle: TDEE + 200 to 300 kcal<br>
+          <strong>80% regain weight in 5 years without support!</strong>
+        </p>
+      </div>
+
+      <div class="card" style="background:#fdf4ff; border-right:4px solid var(--purple);">
+        <h3>🧠 PSYCH FACTORS + MYTHS</h3>
+        <p>
+          Causes of weight gain: Excess calories, Inactivity, Genetics, Hormones (Hypothyroid, PCOS), Psychology, Environment<br>
+          ❌ Myth: Carbs cause obesity → Truth: Total calories matter<br>
+          ❌ Myth: Skip meals = weight loss → Truth: disrupts blood sugar<br>
+          ❌ Myth: Fast loss is good → Truth: 0.5–1 kg/week is ideal
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight red-bg" style="margin-top:6px; text-align:center; font-size:13px; padding:12px;">
+    <strong>🌟 الجملة اللي المفروض تفضل في دماغك: 🌟</strong><br>
+    <em>"Eat Food. Not Too Much. Mostly Plants." — Michael Pollan</em><br>
+    والأهم: <strong>Weight management = Energy Balance + Behavioral Change + Individualization</strong>
+  </div>
+
+  <div style="text-align:center; margin-top:10px; padding:10px; background:var(--primary); border-radius:8px; color:white;">
+    <p style="font-size:13px; font-weight:700;">🎓 ربنا يوفقك في الامتحان — بالتوفيق يا بطل! 💪</p>
+    <p style="font-size:10px; opacity:0.8;">Dr. Marwa Ibrahim Khedr — Alexandria Faculty of Medicine — Biochemistry & Clinical Nutrition</p>
+  </div>
+
+  <div class="page-num">الصفحة 12 — الـ Cheat Sheet النهائي</div>
+</div>
+
+</body>
+</html>
